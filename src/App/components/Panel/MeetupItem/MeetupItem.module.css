@@ -1,0 +1,13 @@
+.item {
+  padding: 5px 10px;
+  text-decoration: none;
+  border-top: solid 1px #ccc;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  border-right: 4px solid #fff;
+}
+
+.isSelected {
+  border-right: 4px solid #00d1b2;
+}

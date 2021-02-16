@@ -1,0 +1,21 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  border-right: 1px solid #ccc;
+}
+.header {
+  height: 60px;
+  padding: 5px 10px;
+}
+.content {
+  display: flex;
+}
+
+.meetupList {
+  flex: 1;
+}
+
+.meetupList:last-child {
+  border-bottom: solid 1px #ccc;
+}

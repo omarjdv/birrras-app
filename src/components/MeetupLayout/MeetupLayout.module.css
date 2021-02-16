@@ -1,0 +1,17 @@
+.container {
+  display: flex;
+  height: 100vh;
+}
+.panel {
+  display: flex;
+  width: 350px;
+  height: 100%;
+  overflow: auto;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  height: 100%;
+  overflow: auto;
+}
