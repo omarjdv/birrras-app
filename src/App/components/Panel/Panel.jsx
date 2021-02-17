@@ -1,12 +1,11 @@
 import { useContext } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { MeetupContext } from "../../MeetupContext";
 import MeetupItem from "./MeetupItem";
 
 import styles from "./Panel.module.css";
 
 const Panel = () => {
-  const { id } = useParams();
   const { list } = useContext(MeetupContext);
   return (
     <div className={styles.container}>

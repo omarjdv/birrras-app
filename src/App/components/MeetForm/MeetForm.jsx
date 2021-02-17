@@ -1,14 +1,29 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { useHistory } from "react-router-dom";
+import { MeetupContext } from "../../MeetupContext";
+
+const initialState = {
+  title: "",
+  theme: "",
+  maxMembers: 30,
+  date: "",
+};
 
 const MeetForm = () => {
-  const [data, setData] = useState({});
+  const history = useHistory();
+  const { addMeetup } = useContext(MeetupContext);
+  const [data, setData] = useState(initialState);
   const handleOnChange = (e) => {
     setData((data) => ({ ...data, [e.target.name]: e.target.value }));
   };
+
   const handleOnSubmit = (e) => {
     e.preventDefault();
-    console.log(data);
+    const id = addMeetup(data);
+    setData(initialState);
+    history.push(`/meet/${id}`);
   };
+
   return (
     <div>
       <section className="hero is-primary">
@@ -27,6 +42,8 @@ const MeetForm = () => {
               className="input"
               type="text"
               placeholder="Ingresá tu título"
+              value={data.title}
+              required
             />
           </div>
         </div>
@@ -39,6 +56,8 @@ const MeetForm = () => {
               className="input"
               type="text"
               placeholder="Ingresá tu tema"
+              value={data.theme}
+              required
             />
           </div>
         </div>
@@ -47,10 +66,12 @@ const MeetForm = () => {
           <div className="control">
             <input
               onChange={handleOnChange}
-              name="members"
+              name="maxMembers"
               className="input"
               type="number"
               placeholder="Ingresá la cantidad de participantes"
+              value={data.maxMembers}
+              required
             />
           </div>
         </div>
@@ -63,6 +84,8 @@ const MeetForm = () => {
               className="input"
               type="datetime-local"
               placeholder="Ingresá la fecha"
+              value={data.date}
+              required
             />
           </div>
         </div>

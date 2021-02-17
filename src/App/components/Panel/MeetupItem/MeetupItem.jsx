@@ -3,7 +3,6 @@ import { NavLink } from "react-router-dom";
 import styles from "./MeetupItem.module.css";
 
 const MeetupItem = ({ item }) => {
-  const id = "";
   return (
     <NavLink
       activeClassName={styles.isSelected}
@@ -12,7 +11,7 @@ const MeetupItem = ({ item }) => {
     >
       <h6 className="title is-6 m-0 p-0 ">{item.theme}</h6>
       <h5 className="title is-5 m-0 p-0">{item.title}</h5>
-      <div className="">{item.members} Participantes</div>
+      <div className="">{item.members.length} Participantes</div>
     </NavLink>
   );
 };
