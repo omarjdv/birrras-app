@@ -6,6 +6,7 @@
   flex-direction: column;
   cursor: pointer;
   border-right: 4px solid #fff;
+  color: #363636;
 }
 
 .isSelected {

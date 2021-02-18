@@ -5,6 +5,7 @@ import MeetDetails from "./components/MeetDetails";
 import MeetForm from "./components/MeetForm";
 import Panel from "./components/Panel";
 import MeetupContext from "./MeetupContext";
+import Welcome from "./components/Welcome";
 import "./App.css";
 
 function App() {
@@ -14,7 +15,7 @@ function App() {
         <MeetupLayout panel={<Panel />}>
           <Switch>
             <Route exact path="/">
-              <div>Seleccione una meet</div>
+              <Welcome />
             </Route>
             <Route path="/meet/new">
               <MeetForm />

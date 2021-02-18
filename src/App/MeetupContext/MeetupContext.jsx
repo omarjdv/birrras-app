@@ -1,4 +1,5 @@
 import { createContext, useState, useEffect } from "react";
+import { node } from "prop-types";
 import cuid from "cuid";
 
 export const MeetupContext = createContext();
@@ -54,4 +55,9 @@ const MeetupContextProvider = ({ children }) => {
     </MeetupContext.Provider>
   );
 };
+
+MeetupContextProvider.propTypes = {
+  children: node,
+};
+
 export default MeetupContextProvider;

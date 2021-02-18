@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import { shape, string } from "prop-types";
 
 import styles from "./MeetupItem.module.css";
 
@@ -14,6 +15,13 @@ const MeetupItem = ({ item }) => {
       <div className="">{item.members.length} Participantes</div>
     </NavLink>
   );
+};
+
+MeetupItem.propTypes = {
+  item: shape({
+    theme: string,
+    title: string,
+  }),
 };
 
 export default MeetupItem;

@@ -1,3 +1,5 @@
+import { node } from "prop-types";
+
 import styles from "./MeetupLayout.module.css";
 
 function MeetupLayout({ panel, children }) {
@@ -8,5 +10,10 @@ function MeetupLayout({ panel, children }) {
     </div>
   );
 }
+
+MeetupLayout.propTypes = {
+  panel: node,
+  children: node,
+};
 
 export default MeetupLayout;

@@ -1,6 +1,7 @@
 import { useState, useContext } from "react";
 import { useHistory } from "react-router-dom";
 import { MeetupContext } from "../../MeetupContext";
+import InputField from "../InputField";
 
 const initialState = {
   title: "",
@@ -33,63 +34,40 @@ const MeetForm = () => {
         </div>
       </section>
       <form onSubmit={handleOnSubmit} className="container p-5">
-        <div className="field">
-          <label className="label">Título</label>
-          <div className="control">
-            <input
-              onChange={handleOnChange}
-              name="title"
-              className="input"
-              type="text"
-              placeholder="Ingresá tu título"
-              value={data.title}
-              required
-            />
-          </div>
-        </div>
-        <div className="field">
-          <label className="label">Tema</label>
-          <div className="control">
-            <input
-              onChange={handleOnChange}
-              name="theme"
-              className="input"
-              type="text"
-              placeholder="Ingresá tu tema"
-              value={data.theme}
-              required
-            />
-          </div>
-        </div>
-        <div className="field">
-          <label className="label">Participantes</label>
-          <div className="control">
-            <input
-              onChange={handleOnChange}
-              name="maxMembers"
-              className="input"
-              type="number"
-              placeholder="Ingresá la cantidad de participantes"
-              value={data.maxMembers}
-              required
-            />
-          </div>
-        </div>
-        <div className="field">
-          <label className="label">Fecha</label>
-          <div className="control">
-            <input
-              onChange={handleOnChange}
-              name="date"
-              className="input"
-              type="datetime-local"
-              placeholder="Ingresá la fecha"
-              value={data.date}
-              required
-            />
-          </div>
-        </div>
-
+        <InputField
+          label="Título"
+          onChange={handleOnChange}
+          name="title"
+          placeholder="Ingresá tu título"
+          value={data.title}
+          required
+        />
+        <InputField
+          label="Tema"
+          onChange={handleOnChange}
+          name="theme"
+          placeholder="Ingresá tu tema"
+          value={data.theme}
+          required
+        />
+        <InputField
+          label="Participantes"
+          onChange={handleOnChange}
+          name="maxMembers"
+          placeholder="Ingresá la cantidad de participantes"
+          type="number"
+          value={data.maxMembers}
+          required
+        />
+        <InputField
+          label="Fecha"
+          onChange={handleOnChange}
+          name="date"
+          placeholder="Ingresá la fecha"
+          type="datetime-local"
+          value={data.date}
+          required
+        />
         <button type="submit" className="button is-primary mt-5 ">
           Creá tu meet
         </button>

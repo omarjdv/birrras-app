@@ -10,7 +10,10 @@ const Panel = () => {
   return (
     <div className={styles.container}>
       <div className={styles.header}>
-        <Link to="/meet/new" className="button is-fullwidth is-primary">
+        <Link
+          to="/meet/new"
+          className={`${styles.link} button is-fullwidth is-primary`}
+        >
           Nueva Meetup
         </Link>
       </div>
