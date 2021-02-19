@@ -2,6 +2,7 @@ import { useState, useContext } from "react";
 import { useHistory } from "react-router-dom";
 import { MeetupContext } from "../../MeetupContext";
 import InputField from "../InputField";
+import InputDateField from "../InputDateField";
 
 const initialState = {
   title: "",
@@ -59,12 +60,11 @@ const MeetForm = () => {
           value={data.maxMembers}
           required
         />
-        <InputField
+        <InputDateField
           label="Fecha"
           onChange={handleOnChange}
           name="date"
           placeholder="Ingresá la fecha"
-          type="datetime-local"
           value={data.date}
           required
         />

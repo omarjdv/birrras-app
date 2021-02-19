@@ -1,0 +1,9 @@
+.weather {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  height: 300px;
+}
