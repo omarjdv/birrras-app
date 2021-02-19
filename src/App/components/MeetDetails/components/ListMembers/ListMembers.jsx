@@ -3,6 +3,9 @@ import { string, arrayOf, shape } from "prop-types";
 import HeaderCard from "../HeaderCard";
 
 const ListMembers = ({ label, members }) => {
+  if (!members || !members.length) {
+    return "e";
+  }
   return (
     <div className="card mt-5">
       <HeaderCard label={label} />

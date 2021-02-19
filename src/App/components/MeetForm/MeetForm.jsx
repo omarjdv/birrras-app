@@ -7,7 +7,7 @@ import InputDateField from "../InputDateField";
 const initialState = {
   title: "",
   theme: "",
-  maxMembers: 30,
+  maxMembers: 10,
   date: "",
 };
 
