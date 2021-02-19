@@ -74,6 +74,7 @@ const MeetDetails = () => {
             min={dayWeather?.min}
             max={dayWeather?.max}
             loading={loading}
+            date={meetDetail.date}
           />
         </div>
       </div>
