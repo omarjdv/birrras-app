@@ -4,10 +4,10 @@ import styles from "./Welcome.module.css";
 const Welcome = () => {
   return (
     <div className={styles.container}>
-      <p className="title is-1 is-spaced mb-6 ">
+      <p className="title is-3 is-spaced  mb-6 has-text-centered">
         Seleccione una meetup o creá una nueva
       </p>
-      <Select width="50%" />
+      <Select width="300px" />
     </div>
   );
 };

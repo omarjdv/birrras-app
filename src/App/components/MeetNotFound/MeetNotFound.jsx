@@ -7,7 +7,7 @@ const MeetNotFound = () => {
       <h5 className="title is-5 mb-10">
         ¡Ups, aún no tenés meetups! Creá una nueva
       </h5>
-      <MeetNotFoundImg width="900px" />
+      <MeetNotFoundImg width="500px" />
     </div>
   );
 };
