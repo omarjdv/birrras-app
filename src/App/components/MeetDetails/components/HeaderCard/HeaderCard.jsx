@@ -1,9 +1,11 @@
 import { string } from "prop-types";
 
-const HeaderCard = ({ label }) => {
+const HeaderCard = ({ label, dataTestId }) => {
   return (
     <header className="card-header">
-      <p className="card-header-title">{label}</p>
+      <p data-testid={dataTestId} className="card-header-title">
+        {label}
+      </p>
     </header>
   );
 };

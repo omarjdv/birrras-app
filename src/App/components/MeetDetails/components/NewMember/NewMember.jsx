@@ -6,12 +6,13 @@ import HeaderCard from "../HeaderCard";
 const NewMember = ({ label, onSubmit, onChange, data }) => {
   return (
     <div className="card ">
-      <HeaderCard label={label} />
+      <HeaderCard label={label} dataTestId="new-member" />
       <div className="card-content">
         <div className="content">
           <form onSubmit={onSubmit}>
             <InputField
               label="Nombre"
+              dataTestId="input-name"
               onChange={onChange}
               type="text"
               placeholder="Ingresá tu título"
@@ -20,6 +21,7 @@ const NewMember = ({ label, onSubmit, onChange, data }) => {
               name="name"
             />
             <InputField
+              dataTestId="input-email"
               label="Email"
               onChange={onChange}
               type="text"
@@ -28,7 +30,11 @@ const NewMember = ({ label, onSubmit, onChange, data }) => {
               name="email"
               required
             />
-            <button type="submit" className="button is-primary mt-5 ">
+            <button
+              type="submit"
+              data-testid="button-new-member"
+              className="button is-primary mt-5 "
+            >
               Añadí participante
             </button>
           </form>

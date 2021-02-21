@@ -12,9 +12,6 @@
   border-radius: 50%;
   animation: spin 1s ease-in-out infinite;
   -webkit-animation: spin 1s ease-in-out infinite;
-}
-
-.loadingNormal {
   border-color: #00d1b2;
   border-top-color: #fff;
 }

@@ -7,11 +7,15 @@ export const MeetupContext = createContext();
 const MeetupContextProvider = ({ children }) => {
   const [meetups, setMeetups] = useState(() => {
     const meetupString = localStorage.getItem("meetups");
-    if (meetupString) {
-      const meetups = JSON.parse(meetupString);
-      if (meetups) return meetups;
+    try {
+      if (meetupString) {
+        const meetups = JSON.parse(meetupString);
+        if (meetups) return meetups;
+      }
+      return {};
+    } catch (error) {
+      return {};
     }
-    return {};
   });
 
   useEffect(() => {

@@ -6,7 +6,6 @@ import styles from "./ListMembers.module.css";
 
 const ListMembers = ({ label, members }) => {
   const emptyMembers = !members || !members.length;
-
   return (
     <div className="card mt-5">
       <HeaderCard label={label} />
@@ -15,7 +14,7 @@ const ListMembers = ({ label, members }) => {
           <div className={styles.emptyState}>
             <EmptyMembers width="150px" height="150px" />
             <div className={`${styles.emptyStateMsj} title is-5`}>
-              ¡Una vez que añadas un participante, lo verás aquí!
+              ¡Una vez que añadas un participante, lo veras aquí!
             </div>
           </div>
         ) : (

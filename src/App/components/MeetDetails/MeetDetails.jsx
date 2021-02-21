@@ -1,6 +1,5 @@
 import { useParams } from "react-router-dom";
-import { useContext, useState, useEffect } from "react";
-import { format } from "date-fns";
+import { useContext, useState } from "react";
 
 import { MeetupContext } from "../../MeetupContext";
 import MeetDetailsHeader from "./components/MeetDetailsHeader";
@@ -8,37 +7,17 @@ import NewMember from "./components/NewMember";
 import WeatherTime from "./components/WeatherTime";
 import ListMembers from "./components/ListMembers";
 import MeetNotFound from "../MeetNotFound";
-import { getWeatherFromApi } from "./service";
-import { weatherDataNormalizer } from "./normalizer";
 
 const initialState = { name: "", email: "" };
 const MeetDetails = () => {
-  const [weatherTime, setWeatherTime] = useState({});
-  const [loading, setLoading] = useState(false);
   const [data, setData] = useState(initialState);
   const { getMeetById, addMemberToMeetup } = useContext(MeetupContext);
   const { id } = useParams();
   const meetDetail = getMeetById(id);
 
-  useEffect(() => {
-    getWeatherTime();
-  }, []);
-
   if (!meetDetail) {
     return <MeetNotFound />;
   }
-
-  const getWeatherTime = async () => {
-    try {
-      setLoading(true);
-      const data = await getWeatherFromApi();
-      const normalizerData = weatherDataNormalizer(data);
-      setWeatherTime(normalizerData);
-      setLoading(false);
-    } catch (error) {
-      console.error(error);
-    }
-  };
 
   const handleOnChange = (e) => {
     setData((data) => ({ ...data, [e.target.name]: e.target.value }));
@@ -48,9 +27,6 @@ const MeetDetails = () => {
     addMemberToMeetup({ name: data.name, email: data.email, id: id });
     setData(initialState);
   };
-
-  const dayWeather = weatherTime[meetDetail.date] || {};
-  console.log(dayWeather);
 
   return (
     <div>
@@ -70,11 +46,8 @@ const MeetDetails = () => {
         </div>
         <div className="column">
           <WeatherTime
-            temp={dayWeather?.temp}
-            min={dayWeather?.min}
-            max={dayWeather?.max}
-            loading={loading}
-            date={meetDetail.date}
+            date={meetDetail?.date}
+            members={meetDetail.members.length}
           />
         </div>
       </div>

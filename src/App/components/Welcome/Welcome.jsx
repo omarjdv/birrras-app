@@ -7,7 +7,7 @@ const Welcome = () => {
       <p className="title is-1 is-spaced mb-6 ">
         Seleccione una meetup o creá una nueva
       </p>
-      <Select />
+      <Select width="50%" />
     </div>
   );
 };

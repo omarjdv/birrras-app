@@ -15,6 +15,7 @@ const MeetForm = () => {
   const history = useHistory();
   const { addMeetup } = useContext(MeetupContext);
   const [data, setData] = useState(initialState);
+
   const handleOnChange = (e) => {
     setData((data) => ({ ...data, [e.target.name]: e.target.value }));
   };
@@ -36,6 +37,7 @@ const MeetForm = () => {
       </section>
       <form onSubmit={handleOnSubmit} className="container p-5">
         <InputField
+          dataTestId="input-title"
           label="Título"
           onChange={handleOnChange}
           name="title"
@@ -44,6 +46,7 @@ const MeetForm = () => {
           required
         />
         <InputField
+          dataTestId="input-theme"
           label="Tema"
           onChange={handleOnChange}
           name="theme"
@@ -51,16 +54,9 @@ const MeetForm = () => {
           value={data.theme}
           required
         />
-        <InputField
-          label="Participantes"
-          onChange={handleOnChange}
-          name="maxMembers"
-          placeholder="Ingresá la cantidad de participantes"
-          type="number"
-          value={data.maxMembers}
-          required
-        />
+
         <InputDateField
+          dataTestId="input-date"
           label="Fecha"
           onChange={handleOnChange}
           name="date"

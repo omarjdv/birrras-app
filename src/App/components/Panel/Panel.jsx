@@ -20,6 +20,7 @@ const Panel = () => {
           Nueva Meetup
         </Link>
       </div>
+
       {emptyList ? (
         <EmptyList width="300px" />
       ) : (
