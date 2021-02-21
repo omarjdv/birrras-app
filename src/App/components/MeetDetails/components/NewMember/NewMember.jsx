@@ -15,7 +15,7 @@ const NewMember = ({ label, onSubmit, onChange, data }) => {
               dataTestId="input-name"
               onChange={onChange}
               type="text"
-              placeholder="Ingresá tu título"
+              placeholder="Ingresá tu nombre"
               value={data.name}
               required
               name="name"
@@ -24,8 +24,8 @@ const NewMember = ({ label, onSubmit, onChange, data }) => {
               dataTestId="input-email"
               label="Email"
               onChange={onChange}
-              type="text"
-              placeholder="Ingresá tu tema"
+              type="email"
+              placeholder="Ingresá tu email"
               value={data.email}
               name="email"
               required
